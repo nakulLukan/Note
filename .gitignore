@@ -1,0 +1,15 @@
+Publish
+project.lock.json
+artifacts
+.vs
+*.bak
+*.user
+*.log
+*.lock
+bin
+obj
+packages
+paket.dependencies
+node_modules
+logs
+package-lock.json
