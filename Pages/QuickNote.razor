@@ -1,0 +1,64 @@
+﻿@inherits QuickNoteBase;
+
+<!-- The Modal -->
+<div class="modal fade h-auto" id="create-note-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content h-auto notepad">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="w-100">
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Title</span>
+                        </div>
+                        <input type="text" class="form-control" @bind="Note.Title" />
+                    </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="notepad-new pb-5">
+                    <div id="editor-container">
+                    </div>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer justify-content-start">
+                <div class="row m-0 w-100">
+                    <div class="col-12 justify-content-start px-0">
+                        <div class="input-group input-group-sm notepad-tag">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Tags</span>
+                            </div>
+                            <ul class="form-control form-control-sm">
+                                @foreach (var tag in Tags)
+                                {
+                                    <li>
+                                        <span>
+                                            @tag.Name
+                                        </span>
+                                    </li>
+                                }
+                                <li>
+                                    <input type="text" list="autosuggest-tags" @bind="TagName" @onkeypress="KeyPressEvent" />
+                                    <datalist id="autosuggest-tags">
+                                        @foreach(var tag in SuggestedTags)
+                                        {
+                                            <option value="@tag"/>
+                                        }
+                                    </datalist>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col justify-content-end mt-3 px-0">
+                        <button type="button" class="btn btn-primary" @onclick="SaveNote">Save</button>
+                        <button type="button" class="btn btn-outline-secondary float-right" data-dismiss="modal" @onclick="CloseQuickNoteModal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

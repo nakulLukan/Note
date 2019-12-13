@@ -7,5 +7,8 @@ namespace Note.Interfaces
     public interface IDataService
     {
         Task<List<Thread>> GetLastNThreads(int top = 10);
+        void SaveNote(Thread thread);
+        Tag GetTagByName(string tagname);
+        Task<List<string>> GetSuggestedTags();
     }
 }

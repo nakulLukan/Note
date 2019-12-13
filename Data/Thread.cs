@@ -14,5 +14,11 @@ namespace Note.Web.Data
 
         public List<Comment> Comments { get; set; }
         public List<ThreadTag> Tags { get; set; }
+
+        public Thread()
+        {
+            Comments = new List<Comment>();
+            Tags = new List<ThreadTag>();
+        }
     }
 }

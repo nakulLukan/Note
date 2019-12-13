@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Note.Interfaces;
 using Note.Services;
+using Microsoft.JSInterop;
 
 namespace Note.Web.Extensions
 {
@@ -13,8 +14,9 @@ namespace Note.Web.Extensions
         /// <param name="services"></param>
         public static void RegisterServices(this IServiceCollection services)
         {
-            //services.AddTransient<NoteDbContext, NoteDbContext>();
+            services.AddTransient<IJSIntrop, JSIntropService>();
             services.AddTransient<IDataService, DataService>();
+            services.AddTransient<IQuickNoteModal, QuickNoteModalService>();
         }
     }
 }
