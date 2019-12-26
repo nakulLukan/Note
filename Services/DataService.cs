@@ -22,7 +22,7 @@ namespace Note.Services
         /// <returns></returns>
         public async Task<List<Thread>> GetLastNThreads(int top = 10)
         {
-            return await _context.Threads.AsNoTracking().ToListAsync();
+            return await _context.Threads.OrderByDescending(x=>x.CreatedAt).Include(x=>x.Comments).ToListAsync();
         }
 
         /// <summary>

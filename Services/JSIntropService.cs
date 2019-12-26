@@ -15,6 +15,11 @@ namespace Note.Services
             _runtime = runtime;
         }
 
+        public Task<string> GetPlainText(string quillContents)
+        {
+            return _runtime.InvokeAsync<string>("GetPlainText", quillContents).AsTask();
+        }
+
         public async Task InitNotePad()
         {
            await _runtime.InvokeVoidAsync("InitNotePad", "#editor-container");

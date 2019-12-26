@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
 using Note.Interfaces;
 using Note.Web.Data;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,15 +19,15 @@ namespace Note.Pages
         [Inject]
         IQuickNoteModal Modal { get; set; }
 
-        [Parameter]
         public bool HasThreads { get; set; } = false;
 
-        public Thread Note { get; set; } = new Thread();
+        public List<Thread> Threads { get; set; } = new List<Thread>();
+        public Dictionary<int, string> AbstractContents { get; set; } = new Dictionary<int, string>();
 
         protected override async Task OnInitializedAsync()
         {
-            var threads = await DataService.GetLastNThreads();
-            if (threads.Any())
+            Threads = await DataService.GetLastNThreads();
+            if (Threads.Any())
             {
                 HasThreads = true;
             }
@@ -37,6 +38,20 @@ namespace Note.Pages
             if (firstRender)
             {
                 await this.JSRuntime.InitNotePad();
+                foreach(var thread in Threads)
+                {
+                    try
+                    {
+                        var text = await JSRuntime.GetPlainText(thread.Comments.FirstOrDefault()?.Content ?? string.Empty);
+                        AbstractContents.Add(thread.Id, text);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Message : {e.Message}");
+                    }
+                }
+
+                StateHasChanged();
             }
         }
 

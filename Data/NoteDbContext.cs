@@ -6,7 +6,7 @@ namespace Note.Web.Data
     {
         public NoteDbContext(DbContextOptions options) : base(options)
         {
-
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
         public DbSet<Thread> Threads { get; set; }

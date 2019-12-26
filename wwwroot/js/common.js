@@ -41,3 +41,10 @@ window.ClearQuickNoteContent = () => {
     var quill = window.quill;
     quill.setContents([]);
 }
+
+window.GetPlainText = (threadComment) => {
+    var tempCont = document.createElement("div");
+    var quill = new Quill(tempCont);
+    quill.setContents(JSON.parse(threadComment));
+    return quill.getText();
+}

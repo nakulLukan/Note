@@ -6,8 +6,6 @@
     <div class="row">
         <div class="col-12 bg-dark text-white p-2 text-center">
             <input type="text"
-                   @bind-value="Note.Title"
-                   @bind-value:event="oninput"
                    @onfocusin="OpenNotePad"
                    class="mx-auto my-auto input-new-note-abstract"
                    placeholder="Create your note here...." />
@@ -15,11 +13,21 @@
         </div>
         <div class="col-12 bg-light corner-radius m-3 h-100">
             <label hidden="@HasThreads">No Threads</label>
+            <div class="row">
+                @foreach (var content in AbstractContents)
+                {
+                    <div class="col bg-light p-3 m-3 border border-dark">
+                        <div id="short-view-container">
+                            @content.Value
+                        </div>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>
 
-<QuickNote></QuickNote>
+<QuickNote ></QuickNote>
 
 
 

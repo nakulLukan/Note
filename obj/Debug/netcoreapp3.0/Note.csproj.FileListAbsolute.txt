@@ -7,6 +7,7 @@ D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Coun
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Error.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Home.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Index.razor.g.cs
+D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\QuickNote.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\RazorDeclaration\_Imports.razor.g.cs
@@ -135,6 +136,7 @@ D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Pages\Counter.razor.g
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Pages\Error.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Pages\Home.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Pages\Index.razor.g.cs
+D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Pages\QuickNote.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Shared\MainLayout.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\Shared\NavMenu.razor.g.cs
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Razor\_Imports.razor.g.cs
@@ -149,4 +151,3 @@ D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Note.Views.pdb
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Note.csproj.CopyComplete
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Note.dll
 D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Note.pdb
-D:\WORKPLACE\BlazorApps\Note\obj\Debug\netcoreapp3.0\Note.csprojAssemblyReference.cache

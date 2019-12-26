@@ -20,7 +20,7 @@ namespace Note.Pages
 
         [Inject]
         IQuickNoteModal NoteModalService { get; set; }
-
+        
         protected Thread Note { get; set; } = new Thread();
 
         protected List<Tag> Tags = new List<Tag>();

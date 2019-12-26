@@ -8,5 +8,7 @@ namespace Note.Interfaces
     public interface IJSIntrop
     {
         Task InitNotePad();
+
+        Task<string> GetPlainText(string quillContents);
     }
 }
