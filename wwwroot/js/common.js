@@ -46,5 +46,6 @@ window.GetPlainText = (threadComment) => {
     var tempCont = document.createElement("div");
     var quill = new Quill(tempCont);
     quill.setContents(JSON.parse(threadComment));
-    return quill.getText();
+    console.log(quill.getText());
+    return quill.getText().replace(/\n/g, "<br />");;
 }

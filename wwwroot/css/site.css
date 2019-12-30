@@ -179,6 +179,7 @@ app {
             .notepad-tag > ul > li > input {
                 border: none;
                 padding-left: 3px;
-                width:auto;
+                width: auto;
+                outline: none;
             }
 }

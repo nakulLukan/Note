@@ -25,7 +25,6 @@ namespace Note.Pages
 
         protected List<Tag> Tags = new List<Tag>();
         protected List<string> SuggestedTags = new List<string>();
-
         protected string TagName = string.Empty;
 
         protected override void OnAfterRender(bool firstRender)
@@ -103,6 +102,11 @@ namespace Note.Pages
                 TagName = string.Empty;
                 StateHasChanged();
             }
+        }
+
+        protected void RemoveTag(Tag tag)
+        {
+            Tags.Remove(tag);
         }
 
         protected void KeyPressEvent(KeyboardEventArgs e)
