@@ -183,3 +183,12 @@ app {
                 outline: none;
             }
 }
+.short-container{
+    height:220px;
+}
+
+.short-container :hover {
+    background: #d6d5d5;
+    zoom: 1.3;
+    cursor: pointer;
+}
