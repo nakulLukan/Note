@@ -1,24 +1,30 @@
 ﻿@page "/home"
 @page "/"
 @inherits HomeBase;
+@using System.Linq;
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 bg-dark text-white p-2 text-center">
-            <input type="text"
-                   @onfocusin="OpenNotePad"
-                   class="mx-auto my-auto input-new-note-abstract"
-                   placeholder="Create your note here...." />
-
+            <button class="btn btn-lg btn-primary" @onclick="OpenNotePad">Create Note</button>
         </div>
         <div class="col-12 bg-light corner-radius m-3 h-100">
             <label hidden="@HasThreads">No Threads</label>
-            <div class="row">
+            <div class="row justify-content-around">
                 @foreach (var content in AbstractContents)
                 {
-                    <div class="col-3 bg-light p-3 m-3 border border-dark short-container">
-                        <div id="short-view-container">
-                            @content.Value
+                    <div class="col-3">
+                        <div class="card bg-dark text-white m-3 short-note" @onclick="(()=> OpenThread(content.Key))">
+                            <div class="card-header">@content.Value.Title</div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    @foreach (var str in content.Value.Lines)
+                                    {
+                                        <span>@str</span>
+                                        <br />
+                                    }
+                                </p>
+                            </div>
                         </div>
                     </div>
                 }
@@ -27,7 +33,5 @@
     </div>
 </div>
 
-<QuickNote ></QuickNote>
-
-
+<QuickNote></QuickNote>
 

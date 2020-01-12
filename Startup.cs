@@ -1,11 +1,13 @@
-using Note.Web.Data;
-using Note.Web.Extensions;
+using Blazorise;
+using Blazorise.Bootstrap;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Note.Web.Data;
+using Note.Web.Extensions;
 using System;
 
 namespace Note
