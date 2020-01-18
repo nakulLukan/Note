@@ -20,7 +20,10 @@ namespace Note.Pages
 
         [Inject]
         IQuickNoteModal NoteModalService { get; set; }
-        
+
+        [Inject]
+        IQuickNoteModal Modal { get; set; }
+
         protected Thread Note { get; set; } = new Thread();
 
         protected List<Tag> Tags = new List<Tag>();
@@ -58,6 +61,7 @@ namespace Note.Pages
                 CreatedAt = DateTime.Now,
             });
 
+            Note.CreatedAt = Note.UpdatedAt = DateTime.Now;
             Note.Tags = GetAssociatedTags(Note);
             DataService.SaveNote(Note);
 
@@ -115,6 +119,10 @@ namespace Note.Pages
             {
                 AddTag();
             }
+        }
+        public void OpenNotePad()
+        {
+            Modal.ShowModal("create-note-modal");
         }
     }
 }

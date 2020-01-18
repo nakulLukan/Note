@@ -1,5 +1,6 @@
 using Blazorise;
 using Blazorise.Bootstrap;
+using BlazorToastify;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

@@ -1,8 +1,7 @@
-﻿using Note.Web.Data;
+﻿using BlazorToastify;
 using Microsoft.Extensions.DependencyInjection;
 using Note.Interfaces;
 using Note.Services;
-using Microsoft.JSInterop;
 
 namespace Note.Web.Extensions
 {
@@ -17,6 +16,8 @@ namespace Note.Web.Extensions
             services.AddTransient<IJSIntrop, JSIntropService>();
             services.AddTransient<IDataService, DataService>();
             services.AddTransient<IQuickNoteModal, QuickNoteModalService>();
+            services.AddToasts();
+            services.AddTransient<IToaster, Toaster>();
         }
     }
 }

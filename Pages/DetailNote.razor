@@ -1,8 +1,20 @@
 ﻿@page "/thread/{threadId}"
+@inherits DetailNoteBase;
+<style>
+    .content-pad{
+        border-color: transparent !important;
+    }
+</style>
 
-<h3>DetailNote</h3>
+@if (Thread != null)
+{
+    <div class="jumbotron">
+        <h1 class="display-4">@Thread.Title</h1>
+        <p class="lead">
+            <div id="content-container" class="content-pad">
+            </div>
+        </p>
+        <hr class="my-4">
 
-@code {
-    [Parameter]
-    public string threadId { get; set; }
+    </div>
 }

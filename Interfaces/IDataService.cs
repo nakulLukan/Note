@@ -10,5 +10,6 @@ namespace Note.Interfaces
         void SaveNote(Thread thread);
         Tag GetTagByName(string tagname);
         Task<List<string>> GetSuggestedTags();
+        Task<Thread> GetThreadById(int id);
     }
 }

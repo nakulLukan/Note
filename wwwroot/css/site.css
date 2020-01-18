@@ -183,12 +183,4 @@ app {
                 outline: none;
             }
 }
-.short-container{
-    height:220px;
-}
 
-.short-note {
-    cursor: pointer;
-    height: 220px;
-    overflow-y: auto;
-}

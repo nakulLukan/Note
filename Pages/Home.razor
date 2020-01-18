@@ -2,18 +2,25 @@
 @page "/"
 @inherits HomeBase;
 @using System.Linq;
+<style>
+    .short-container {
+        min-width: 200px;
+    }
 
+    .short-note {
+        cursor: pointer;
+        height: 220px;
+        overflow-y: auto;
+    }
+</style>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 bg-dark text-white p-2 text-center">
-            <button class="btn btn-lg btn-primary" @onclick="OpenNotePad">Create Note</button>
-        </div>
         <div class="col-12 bg-light corner-radius m-3 h-100">
             <label hidden="@HasThreads">No Threads</label>
             <div class="row justify-content-around">
                 @foreach (var content in AbstractContents)
                 {
-                    <div class="col-3">
+                    <div class="col-3 short-container">
                         <div class="card bg-dark text-white m-3 short-note" @onclick="(()=> OpenThread(content.Key))">
                             <div class="card-header">@content.Value.Title</div>
                             <div class="card-body">
@@ -32,6 +39,4 @@
         </div>
     </div>
 </div>
-
-<QuickNote></QuickNote>
 

@@ -48,3 +48,13 @@ window.GetPlainText = (threadComment) => {
     quill.setContents(JSON.parse(threadComment));
     return quill.getText();
 }
+
+window.ContentPad = (contentPadId, contents) => {
+    var quill = new Quill(contentPadId, {
+        modules: {
+            toolbar: ''
+        },
+        theme: 'snow'
+    });
+    quill.setContents(JSON.parse(contents));
+}
